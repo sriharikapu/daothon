@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from tileview.views import all_projects, all_people
 from project_detail.views import project_detail
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', all_projects),
     path('people/', all_people),
-    path('?P<project_name>/$', project_detail),
+    # path('?P<project_name>/$', project_detail),
+    path('project_detail/', project_detail),
 ]
